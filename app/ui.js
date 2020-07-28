@@ -45,6 +45,7 @@ MetlinkUI.prototype.updateUI = function (data) {
   this.busStopList.style.display = "inline";
 
   let tile = this.tiles[index];
+  if (!tile) return ;
 
   tile.style.display = "inline";
   tile.getElementById("busStopDetail").text = name;
