@@ -1,0 +1,27 @@
+<svg class="background">
+  <symbol id="bus-stop-tile">
+    <text id="busStopDetail" font-size="40" x="5" y="40" fill="white">Bus Stop</text>
+    <text id="busDetail-0" x="5"   y="78" font-size="30" fill="white"> </text>
+    <text id="busDetail-1" x="5"   y="118" font-size="30" fill="white"> </text>
+    <text id="busDetail-2" x="5"   y="158" font-size="30" fill="white"> </text>
+    <text id="busDetail-3" x="5"   y="198" font-size="30" fill="white"> </text>
+    <text id="busDetail-4" x="5"   y="238" font-size="30" fill="white"> </text>
+    <text id="busDetail-5" x="5"   y="278" font-size="30" fill="white"> </text>
+  </symbol>
+
+  <use id="busStopList" href="#tile-list" height="100%" width="100%">
+    <var id="reorder-enabled" value="0"/>
+    <use id="bus-stop-0" href="#tile-list-item" class="item">
+      <use href="#bus-stop-tile"></use>
+    </use>
+    <use id="bus-stop-1" href="#tile-list-item" class="item">
+      <use href="#bus-stop-tile"></use>
+    </use>
+    <use id="bus-stop-2" href="#tile-list-item" class="item">
+      <use href="#bus-stop-tile"></use>
+    </use>
+    <use id="bus-stop-3" href="#tile-list-item" class="item">
+      <use href="#bus-stop-tile"></use>
+    </use>
+  </use>
+</svg>

@@ -1,0 +1,28 @@
+{
+  "fitbit": {
+    "appUUID": "2d2a7fab-0f67-436e-b5f3-1ed17c5c07ed",
+    "appType": "app",
+    "appDisplayName": "Wellington Bus Stops",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "#00bcd4",
+    "requestedPermissions": [
+      "access_location",
+      "access_internet"
+    ],
+    "buildTargets": [
+      "higgs",
+      "meson",
+      "mira",
+      "gemini"
+    ],
+    "i18n": {
+      "en": {
+        "name": "Wellington Bus Stops"
+      }
+    },
+    "defaultLanguage": "en-US"
+  },
+  "devDependencies": {
+    "@fitbit/sdk": "~4.1.0"
+  }
+}
