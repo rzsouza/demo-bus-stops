@@ -1,15 +1,18 @@
 import document from "document";
+import {STOPS} from "../common/globals";
 
-const MINUTES_MILIS = 1000 * 60;
+const MINUTES_MILLIS = 1000 * 60;
 
 export function MetlinkUI() {
   this.busStopList = document.getElementById("busStopList");
+  this.statusText = document.getElementById("status");
 
   this.tiles = [];
 
-  for (let i = 0; i < 1; i++) {
+  for (let i = 0; i < STOPS; i++) {
     let tile = this.busStopList.getElementById(`bus-stop-${i}`);
     if (tile) {
+      tile.style.display = "none";
       this.tiles.push(tile);
     }
   }
@@ -17,7 +20,7 @@ export function MetlinkUI() {
 
 function calculateDiffInMinutes(departure) {
   let diffTime = departure.displayDeparture - new Date();
-  return Math.floor(diffTime / MINUTES_MILIS);
+  return Math.floor(diffTime / MINUTES_MILLIS);
 }
 
 function createRealDepartureStr(departure) {
@@ -35,17 +38,35 @@ function createDueString(departure) {
     createForecastDeparture(departure);
 }
 
-MetlinkUI.prototype.updateUI = function (data) {
-  console.log(`updateUI ${data}`)
+MetlinkUI.prototype.updateUI = function (state, data) {
+  if (state !== 'loaded') {
+    this.busStopList.style.display = "none";
+
+    if (state === "loading") {
+      this.statusText.text = "Loading departures ...";
+    }
+    else if (state === "disconnected") {
+      this.statusText.text = "Please check connection to phone and Fitbit App"
+    }
+    else if (state === "error") {
+      this.statusText.text = "Something terrible happened.";
+    }
+    return;
+  }
 
   const departures = data.departures;
   const index = data.index;
   const name = data.name;
 
+  // console.log(`updateUI ${index} ${name} ${JSON.stringify(departures)}`);
+
   this.busStopList.style.display = "inline";
 
   let tile = this.tiles[index];
-  if (!tile) return ;
+  if (!tile) {
+    console.log("couldn't find tile with index " + index)
+    return ;
+  }
 
   tile.style.display = "inline";
   tile.getElementById("busStopDetail").text = name;

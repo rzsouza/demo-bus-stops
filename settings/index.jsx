@@ -12,7 +12,7 @@ function mySettings(props) {
           title="Add a stop"
           label="Optional Stop Name - 1"
           settingsKey="stop_name_setting_0"
-          placeholder="Type number"
+          placeholder="Type name"
         />
         <TextInput
           title="Add a stop"
@@ -24,7 +24,7 @@ function mySettings(props) {
           title="Add a stop"
           label="Optional Stop Name - 2"
           settingsKey="stop_name_setting_1"
-          placeholder="Type number"
+          placeholder="Type name"
         />
         <TextInput
           title="Add a stop"
@@ -36,7 +36,7 @@ function mySettings(props) {
           title="Add a stop"
           label="Optional Stop Name - 3"
           settingsKey="stop_name_setting_2"
-          placeholder="Type number"
+          placeholder="Type name"
         />
         <TextInput
           title="Add a stop"
@@ -47,8 +47,8 @@ function mySettings(props) {
         <TextInput
           title="Add a stop"
           label="Optional Stop Name - 4"
-          settingsKey="stop_num_setting_3"
-          placeholder="Type number"
+          settingsKey="stop_name_setting_3"
+          placeholder="Type name"
         />
       </Section>
     </Page>

@@ -13,6 +13,6 @@ messaging.peerSocket.onopen = function() {
 
 // Listen for the onmessage event
 messaging.peerSocket.onmessage = function(evt) {
-  ui.updateUI(evt.data);
+  ui.updateUI("loaded", evt.data);
 }
 
