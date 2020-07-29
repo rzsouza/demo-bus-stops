@@ -58,7 +58,7 @@ MetlinkUI.prototype.updateUI = function (state, data) {
   const index = data.index;
   const name = data.name;
 
-  // console.log(`updateUI ${index} ${name} ${JSON.stringify(departures)}`);
+  console.log(`updateUI ${index} ${name} ${JSON.stringify(departures)}`);
 
   this.busStopList.style.display = "inline";
 
